@@ -1,3 +1,4 @@
+// difference calculator class 
 public class DifferenceCalculator {
 
     private long a;
