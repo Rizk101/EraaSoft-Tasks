@@ -1,3 +1,4 @@
+// say hello with OOP
 public class Hello {
 
     public void sayHello() {
