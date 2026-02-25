@@ -1,3 +1,4 @@
+// circle class
 public class Circle {
 
     private double radius;
