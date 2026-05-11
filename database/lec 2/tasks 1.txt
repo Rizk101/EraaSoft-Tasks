@@ -1,0 +1,59 @@
+-- Create Table
+CREATE TABLE Doctor (
+    id INT,
+    name VARCHAR(50),
+    salary INT,
+    address VARCHAR(100)
+);
+
+--------------------------------------------------
+
+-- Insert 10 Rows
+INSERT INTO Doctor VALUES (1, 'Ahmed', 1000, 'Cairo');
+INSERT INTO Doctor VALUES (2, 'Mohamed', 2000, 'Giza');
+INSERT INTO Doctor VALUES (3, 'Ali', 3000, 'Alexandria');
+INSERT INTO Doctor VALUES (4, 'Sara', 4000, 'Mansoura');
+INSERT INTO Doctor VALUES (5, 'Mona', 5000, 'Aswan');
+INSERT INTO Doctor VALUES (6, 'Omar', 6000, 'Luxor');
+INSERT INTO Doctor VALUES (7, 'Nour', 7000, 'Tanta');
+INSERT INTO Doctor VALUES (8, 'Hassan', 8000, 'Suez');
+INSERT INTO Doctor VALUES (9, 'Youssef', 9000, 'Ismailia');
+INSERT INTO Doctor VALUES (10, 'Laila', 10000, 'Port Said');
+
+--------------------------------------------------
+
+-- Update record number 3 with salary = 20000
+UPDATE Doctor
+SET salary = 20000
+WHERE id = 3;
+
+--------------------------------------------------
+
+-- Delete record number 9
+DELETE FROM Doctor
+WHERE id = 9;
+
+--------------------------------------------------
+
+-- Concatenate name with salary
+SELECT CONCAT(name, ' ', salary) AS Name_Salary
+FROM Doctor;
+
+--------------------------------------------------
+
+-- Display all records with salary * 2
+SELECT id, name, salary * 2 AS Double_Salary, address
+FROM Doctor;
+
+--------------------------------------------------
+
+-- Select all data with salary 1000, 2000, 3000
+SELECT *
+FROM Doctor
+WHERE salary IN (1000, 2000, 3000);
+
+--------------------------------------------------
+
+-- Rename table Doctor to PRD_DOCTOR
+ALTER TABLE Doctor
+RENAME TO PRD_DOCTOR;
