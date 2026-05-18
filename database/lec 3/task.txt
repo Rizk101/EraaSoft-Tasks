@@ -1,0 +1,14 @@
+It will return employees whose FIRST_NAME starts within the alphabetical range from a to c.
+
+
+and why ?
+
+Because SQL compares strings using alphabetical order.
+So when SQL sees:
+
+FIRST_NAME BETWEEN 'a' AND 'c'
+
+it actually understands it as:
+
+FIRST_NAME >= 'a'
+AND FIRST_NAME <= 'c'
