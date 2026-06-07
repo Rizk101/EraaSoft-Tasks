@@ -1,0 +1,83 @@
+1. Find all employees where emp_id is between 100 and 105
+SELECT *
+FROM employees
+WHERE employee_id BETWEEN 100 AND 105;
+
+2. Find employees with specific employee IDs
+SELECT *
+FROM employees
+WHERE employee_id IN (151, 152, 153, 154, 155);
+
+3. First name starts with P or p
+SELECT *
+FROM employees
+WHERE UPPER(first_name) LIKE 'P%';
+
+4. First name ends with A or a
+SELECT *
+FROM employees
+WHERE UPPER(first_name) LIKE '%A';
+
+5. First name starts with A or a
+SELECT *
+FROM employees
+WHERE UPPER(first_name) LIKE 'A%';
+
+6. Third character is E or e
+SELECT *
+FROM employees
+WHERE UPPER(first_name) LIKE '__E%';
+
+7. Employees without a manager
+SELECT *
+FROM employees
+WHERE manager_id IS NULL;
+
+8. Employees with a manager
+SELECT *
+FROM employees
+WHERE manager_id IS NOT NULL;
+
+9. Insert a new employee without a manager
+INSERT INTO employees
+(employee_id, first_name, last_name, email, hire_date, job_id, salary, manager_id)
+VALUES
+(300, 'Karim', 'Rizk', 'KRIZK', SYSDATE, 'IT_PROG', 5000, NULL);
+
+10. Employees working as AD_VP or IT_PROG
+SELECT *
+FROM employees
+WHERE job_id IN ('AD_VP', 'IT_PROG');
+
+ 11. Sort by last name ascending
+SELECT *
+FROM employees
+ORDER BY last_name ASC;
+
+12. Sort by hire date descending
+SELECT *
+FROM employees
+ORDER BY hire_date DESC;
+
+13. Sort by department ascending and salary descending
+SELECT *
+FROM employees
+ORDER BY department_id ASC, salary DESC;
+
+14. Display last name in lowercase
+SELECT LOWER(last_name) AS last_name
+FROM employees;
+
+15. Display first name in uppercase
+SELECT UPPER(first_name) AS first_name
+FROM employees;
+
+16. Display first and last names in title case
+SELECT INITCAP(first_name) AS first_name,
+       INITCAP(last_name) AS last_name
+FROM employees;
+
+17. Find employees whose last name is Smith (case-insensitive)
+SELECT *
+FROM employees
+WHERE UPPER(last_name) = 'SMITH';
